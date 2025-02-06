@@ -38,5 +38,4 @@ function draw() {
   //creds to p5js!
 
 
-  let number = 80;
-  console.log(number); 
+ 
