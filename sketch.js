@@ -1,7 +1,7 @@
 
 // all the stuff that happens in the curly { } works for funtions and objects
 function setup() {
-    createCanvas(windowWidth, windowHeight);
+    createCanvas(300, 300);
     xCenter=150;
     yCenter=150;
   }
