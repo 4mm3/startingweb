@@ -37,11 +37,11 @@ function draw(){
         if (mode === 'line'){
             line(mouseX, mouseY, pmouseX, pmouseY);
         }  else if (mode === 'circle') { 
-            circle(mouseX, mouseY, 50, 50); 
+            circle(mouseX, mouseY, 20, 50); 
         } else if (mode === 'square') { 
-            square(mouseX, mouseY, 50,); 
+            square(mouseX, mouseY, 20,); 
         } else if (mode === 'triangle') { 
-            triangle(mouseX, mouseY, mouseX - 30, mouseY + 40, mouseX + 30, mouseY + 40)
+            triangle(mouseX, mouseY, mouseX - 10, mouseY + 20, mouseX + 10, mouseY + 20)
         }
         
     }
