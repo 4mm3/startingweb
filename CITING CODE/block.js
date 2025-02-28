@@ -3,7 +3,7 @@ class Block {
         this.x = x;
         this.y = y;
         this.angle = 0;
-        this.c = 70;
+        this.c = 70; //changed this colour
     }
 
     display(){ //to rotate the shape
