@@ -17,15 +17,77 @@
             justify-content: center; 
             align-items: center; 
             height: 100vh; 
+            position: relative;
         }
 
-     </style>
-</head>
-<body>
-    <div id="canvas-container">
-    <script src="p5.min.js"></script>
-    <script src="tasketch.js"></script>
+        /* HAD TO DO ALL THIS CAUSE THE TEXT WAS MESSING UP THE JS CANVAS */
+        h1 {
+            font-size: 20px;
+            text-align: centeR;
+            margin: 0;
+            padding: 10px;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #000000;
+            width: 100%;
+            box-sizing: border-box;
+           
+        }
+        p {
+            font-size: 14px;
+            text-align: center;
+            margin: 0;
+            padding: 10px;
+            position: absolute;
+            top: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #000000;
+            width: 80%;
+            box-sizing: border-box;
+        }
 
+        #canvas-container {
+            text-align: center;
+            position: relative; 
+        }
+
+    </style>
+</head>
+<h1>
+    ALPHABET SOUP TIME
+</h1>
+<p>
+    put your favourite letter or word in the soup and eat some bread
+    <br> <br>
+</p>
+<body>
+    
+    
+    <div id="canvas-container">
+    
+        <script src="p5.min.js"></script>
+        <script src="tasketch.js"></script>
     </div>
+
+    <audio loop autoplay>
+        <source src="Alphabet Soup - First Day, Last Night.mp3" type="audio/mpeg">
+      </audio>
+      <!--
+      
+      I WAS TRYING TO FIND SONGS TO ADD FOR MY SOUP TIME AND I FOUND THIS
+      JAZZ HIPHOP SONG FROM A GROUP LITERALLY NAMED ALPHABET SOUP AND I THOUGHT IT WAS PERFECT
+      I LISTEN TO THEIR SONGS AND PICKED MY FAV LOL
+      
+      ALPHABET SOUP 
+      SONG: FIRST DAY, LAST NIGHT
+      ALBUM: LAYIN' THE LOW CUT
+      1995
+      
+      -->
+
+
 </body>
 </html>
