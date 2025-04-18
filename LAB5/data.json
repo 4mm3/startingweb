@@ -1,0 +1,18 @@
+{
+    "jetsetradio": [
+        { "name": "Beat", "role": "Leader" },
+        { "name": "Gum", "role": "Graffiti Artist" },
+        { "name": "Yoyo", "role": "Skater" },
+        { "name": "Tab", "role": "Hacker" },
+        { "name": "Professor K", "role": "DJ" },
+        { "name": "Captain Onishima", "role": "Police Officer" }
+
+
+    ],
+    "gameInfo": {
+        "title": "Jet Set Radio",
+        "releaseYear": "2000",
+        "developer": "Smilebit",
+        "platforms": ["Dreamcast", "PC", "Xbox 360", "PlayStation 3"]
+    }
+}
