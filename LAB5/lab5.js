@@ -58,10 +58,15 @@ function draw(){
         y += 20;
         text(`PLATFORMS: ${jsrData.gameInfo.platforms}`, width / 2, y);
 
-
+//https://jetsetradio-api.onrender.com/
+//https://gamesystemrequirements.com/game/jet-set-radio
+//https://www.w3schools.com/JS/js_json.asp
+//https://p5js.org/reference/p5/loadJSON/
+//https://www.w3schools.com/jsref/api_fetch.asp
 
 
     }
+}
 
    // textSize(16);
    // fill(0);
@@ -74,5 +79,5 @@ function draw(){
   //  index = index % data.jetsetradio.length;
   //  }
   //  text(data.jetsetradio[index],20,20);
-}
+
 
