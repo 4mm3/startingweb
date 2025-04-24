@@ -20,9 +20,10 @@ let closetClicked = false;
 let closetImageTimer = 0;
 let closetmanAppearCount = 0; 
 let closetmanTimer = 0;
-
 let guitarClicked = false;
 let guitarImageTimer = 0;
+
+//et guitarSound;
 
 //I WANTED A DELAY BETWEEN PART 2 AND 3
 let transitionTime = 0;
@@ -76,6 +77,7 @@ bedsheet = loadImage("room/bedsheet.png");
     wwindow = loadImage("room/window.png"); //wwindow GOTTA BE WW CAUSE IT WAS NOT WORKING,ITS ALREADY AN OBJECT IN JS OR SOMETHING
     windowclick = loadImage("room/windowclickaction.png");
 
+  //  guitarSound = loadSound("detunedguitar.mp3");
 
     //scary things
     tallman = loadImage("room/tallman.png");
@@ -122,7 +124,8 @@ function draw() {
     background(room);
     image(bedsheet, 0, height - 150, windowWidth, 150); //BED SHEET
 
-    //PART 1 WITH MOM IN ROOM
+    //PART 1 WITH MOM IN ROOM 
+    // IDK IF I LIKE FRAME COUNT OR MILLIS BETTER BOTH WERE COMPLICATED BUT FOR PART 2 AND 3 I CONTINUED WITH MILLIES AND NOT THE FRAME COUNT STUFF
     if (part === 1) {
     if (frameCount <= 300) { 
         document.body.style.cursor = "none";
@@ -254,7 +257,7 @@ function draw() {
 
     }//PART3 END
 
-    if (part === 4) {
+    if (part === 4) { //I WAS TRYING SO HARD TO GET THIS TO HAPPEN 3 SECOND AFTER NOT MOM AND IT WASNT WORKING SO I GAVE UP AND MAKE A PART 4 LOL
         window.location.href = "faindex.html"; 
     }
 
@@ -273,11 +276,15 @@ function mousePressed() {
         closetImageTimer = millis(); 
         console.log("closet clicked");
     }
-    
+
     if (!guitarClicked && mouseX > 790 && mouseX < 790 + guitar.width && mouseY > height - 320 && mouseY < height - 320 + guitar.height) {
         guitarClicked = true; 
         guitarImageTimer = millis(); 
         console.log("guitar clicked"); 
+
+       // if (guitarSound && !guitarSound.isPlaying()) {
+           // guitarSound.play();
+       // } I HAVE NO IDEA HOW TO FIX THIS 
     }
 
     if (!mombuttonClicked && mouseX > 10 && mouseX < 10 + mombutton.width && mouseY > 600 && mouseY < 600 + mombutton.height) {
@@ -297,6 +304,8 @@ function mousePressed() {
 
   }
 
+//PROCESS
+
 //APRIL 18, STARTED ON PHOTOSHOP
 //APRIL 21, STARTED WORKING AGAIN AND FINISHED ALL THE PHOTOSHOP STUFF AND DID BASE CODING.
 
@@ -310,3 +319,26 @@ function mousePressed() {
 // I USED COPILOT TO HELP ME TROUBLESHOOT CAUSE I WAS CONFUSED ABOUT THE TIMERS AND I THINK I GOT IT NOW
 
 //ARPRIL 24 1:03AM OMGMGMGM FINALLY IT ALL WORKED OMG I HATE MILLIS THAT THING WAS NOT WORKING FOR ME
+// MY FAV LINE OF CODE WAS ANY CLOSETMAN CODE. I REALLY LIKED THAT GLITCH EFFECT CAUSE THATS THE VIBE OF THE GAME I WANTED TO MAKE
+//HAVING THE CLOSET CLICKED THEN CLOSETMAN IS THERE I THINK IS A GOOD STUBLE INTRO OF THE OTHER SPOOKY GUYS TALLMAN AND NOT MOM SO YEAH
+
+
+
+
+
+
+//CITATION
+//https://www.w3schools.com/js/js_timing.asp
+//https://p5js.org/reference/p5/millis/
+//https://p5js.org/reference/p5/frameCount/
+//https://p5js.org/reference/p5/image/
+//https://p5js.org/reference/p5/mouseClicked/
+//https://p5js.org/reference/p5/mousePressed/
+//https://www.w3schools.com/htmL/html_images_imagemap.asp THIS WAS MORE INSPO
+//Mandela catalogue inspo
+//https://www.youtube.com/watch?v=5h7rSSzH2g8 
+//https://codepen.io/citizenwoodward/pen/RNRQKx
+//https://www.w3schools.com/js/js_debugging.asp
+//https://www.w3schools.com/js/js_arrays.asp
+//https://www.w3schools.com/js/js_if_else.asp
+

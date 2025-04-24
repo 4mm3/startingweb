@@ -103,5 +103,6 @@ if (currentTextIndex < texts.length) {
   }
 }
 
+//https://p5js.org/reference/p5/millis/ I DONT THINK I LIKE MILLIS
 
    
