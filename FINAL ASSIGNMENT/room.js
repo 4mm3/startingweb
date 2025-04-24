@@ -31,11 +31,13 @@ let transitionPart = false;
 //part3 
 let tallmanTimer = 0;
 let tallmanVisible = true; 
-let tallmanDisappearTimer = 0; //I HAVE 2 CAUSE IT WAS GETTING CONFUSED WITH THE ENTER TIME IDK HELP
+let tallmanDisappearTimer = 0; //I HAVE 2 CAUSE IT WAS GETTING CONFUSED WITH THE ENTER TIME IDK HELP IDK IF I NEED THIS OR THE OTHER ONE
 let mombuttonClicked = false; //MOM BUTTON
 let mombuttonTimer = 0; 
 //let momshoutVisible = false; //MOM SHOUT
 //let momshoutTimer = 0;
+let notmomVisible = false;
+let notmomTimer = 0; 
 
 
 
@@ -73,6 +75,7 @@ bedsheet = loadImage("room/bedsheet.png");
     guitarclick = loadImage("room/guitarclickaction.png");
     wwindow = loadImage("room/window.png"); //wwindow GOTTA BE WW CAUSE IT WAS NOT WORKING,ITS ALREADY AN OBJECT IN JS OR SOMETHING
     windowclick = loadImage("room/windowclickaction.png");
+
 
     //scary things
     tallman = loadImage("room/tallman.png");
@@ -218,18 +221,44 @@ function draw() {
         if (mombuttonClicked && millis() - mombuttonTimer <= 3000) {
             image(momshout, 80, 600, 900, 100); 
         }
-        if (millis() - tallmanDisappearTimer > 1000 && tallmanDisappearTimer > 0) {
+        //if (millis() - tallmanDisappearTimer > 1000 && tallmanDisappearTimer > 0) {
+        if (tallmanVisible && tallmanDisappearTimer > 0 && millis() - tallmanDisappearTimer > 1000) {
             tallmanVisible = false; //BYE TALL MAN
             console.log("tallman disappeared");
+            notmomTimer = millis();
+            //console.log("notmomTimer set to:", notmomTimer);
                 }
 
-    }//PART3 END
-}//DRAWEND
-    
+        if (notmomTimer > 0 && millis() - notmomTimer >= 3000 && !tallmanVisible) {
+            notmomVisible = true; 
+            console.log("show not mom");
 
+     }       
+        if (notmomVisible) {
+            image(notmom, 400, 200); 
+            image(bedsheet, 0, height - 160, windowWidth, 150);
+            image(notmomtext, 80, 600, 900, 100);
+        } 
+
+        if (notmomVisible && millis() - notmomTimer >= 6000) { 
+            console.log("part 4");
+            part = 4;
+        }   
+
+       // if (notmomVisible && sleepTimer > 0 && millis() - sleepTimer >= 3000) {
+       //     image(sleeping, 0, 0, windowWidth, windowHeight); //BLACK SCREEN
+     //   }
         
-      
+      //  if (sleepTimer > 0 && millis() - sleepTimer >= 4000) {
+       
 
+    }//PART3 END
+
+    if (part === 4) {
+        window.location.href = "faindex.html"; 
+    }
+
+}//DRAWEND
 
 //PLEASE DONT CLICK ALL AT THE SAME TIME
 function mousePressed() {
@@ -244,6 +273,7 @@ function mousePressed() {
         closetImageTimer = millis(); 
         console.log("closet clicked");
     }
+    
     if (!guitarClicked && mouseX > 790 && mouseX < 790 + guitar.width && mouseY > height - 320 && mouseY < height - 320 + guitar.height) {
         guitarClicked = true; 
         guitarImageTimer = millis(); 
@@ -277,6 +307,6 @@ function mousePressed() {
 
 //APRIL 23, IM RESIZING THE CANVAS SO NOW I NEED TO EDIT ALL THE POSITIONS, DOING WINDOW WIDTH RUINED THE SCALE SO I HAVE TO CHANGE IT
 //I WANTED THE GAME TO BE A BIT LONGER BUT HONESTLY JUST DOING ALL THIS WAS TOOK ALOT LONGER THAN I ACTUALLY THOUGHT
+// I USED COPILOT TO HELP ME TROUBLESHOOT CAUSE I WAS CONFUSED ABOUT THE TIMERS AND I THINK I GOT IT NOW
 
-
-
+//ARPRIL 24 1:03AM OMGMGMGM FINALLY IT ALL WORKED OMG I HATE MILLIS THAT THING WAS NOT WORKING FOR ME
