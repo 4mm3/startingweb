@@ -5,16 +5,37 @@
             START A WEB
         </title>
         <script src="p5.min.js"></script>
+        <script src="https://www.w3schools.com/lib/w3.js"></script>
+
         <style>
             body {
                 background-color: #008000;
                 font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
                 margin-left: 100;
-                text-align: center;            
+                text-align: center;
+                
+                cursor: url("soul.png"), auto; 
+            }
+
+            a {
+                display: inline-block; 
+                padding: 10px 20px; 
+                margin: 10px; 
+                border: 2px solid rgb(120, 235, 13); 
+                border-radius: 5px; 
+                text-decoration: none;
+                color: rgb(120, 235, 13); 
+                background-color: #000; 
+                transition: all 0.3s ease;
+            }
+
+            a:hover {
+                color: #000 !important;
+                background-color: rgb(120, 235, 13); 
+                border-color: #000; 
             }
             
           /*  I ENDED UP REMOVING THIS WEEK4 AND I FINALLY FIGURED OUT HOW TO CENTER THE STAR
-          
           .container {
             margin-left: 20px; 
             margin-right: 20px; 
@@ -22,10 +43,28 @@
             padding: 20px;
             } */
 
+            .slideshow-container {
+                display: flex; 
+                justify-content: center; 
+                align-items: center; 
+                height: 50vh; 
+                
+                
+            }
+
+            .slides {
+                max-width: 100%; 
+                max-height: 100%; 
+            }
+
 
         </style>
     </head>
     <body>
+
+        <audio loop autoplay>
+            <source src="LetMomSleep.mp3" type="audio/mpeg">
+          </audio>
         
 
     <script src="sketch.js"></script> 
@@ -33,7 +72,20 @@
 
         <h1>starting a website</h1>
         <br>
-        <img src="Jsr_art.png" width="300" height="400">
+
+        <div class="slideshow-container">
+        <img class="slides" src="Jsr_art.png" width="300" height="400">
+        <img class="slides" src="jsrlogo.webp" width="400" height="400">
+        <img class="slides" src="jsrgroup.webp" width="500" height="400">
+        <img class="slides" src="jsrposter.png" width="300" height="400">
+        <img class="slides" src="jsrlogo.webp" width="400" height="400">
+        <img class="slides" src="jsrgroup.webp" width="500" height="400">
+        </div>
+
+        <script>
+            w3.slideshow(".slides", 1000);
+        </script>
+
         <br><br>
         this is a video game i like called jet set radio
         <br> <br> <br>
@@ -63,3 +115,12 @@
  
     </body>
 </html>
+
+<!--
+RESUMBIT CHANGES
+- ADDED MUSIC
+- CHANGED CURSOR
+- PUT BOXES
+- IMAGE SLIDESHOW
+- A CONSOLELOG ON MY SKETCHJS CAUSE I MISSED THAT
+-->

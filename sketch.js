@@ -4,6 +4,7 @@ function setup() {
     createCanvas(300, 300);
     xCenter=150;
     yCenter=150;
+    console.log("canvas created");
   }
 
 function draw() {
@@ -27,9 +28,12 @@ function draw() {
     for (let a = 0; a < TWO_PI; a += angle) {
       let sx = x + cos(a) * radius2;
       let sy = y + sin(a) * radius2;
+
       vertex(sx, sy);
+
       sx = x + cos(a + halfAngle) * radius1;
       sy = y + sin(a + halfAngle) * radius1;
+
       vertex(sx, sy);
     }
     endShape(CLOSE);
